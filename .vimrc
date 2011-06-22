@@ -19,4 +19,5 @@ set numberwidth=4
 " Map jj to <esc>
 imap jj <Esc>
 
+" Testar att lägga till lite information här
 " http://weierophinney.net/matthew/archives/249-Vim-Toolbox,-2010-Edition.html
