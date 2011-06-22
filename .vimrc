@@ -22,9 +22,12 @@ set numberwidth=4
 " Map jj to <ESC>
 imap jj <Esc>
 
-" Add mapping for swithcing tabs in normal mode
+" Add mapping for switching tabs in normal mode
 nmap ö :tabp<CR>
 nmap ä :tabn<CR>
+
+" Add mapping for saving without exiting
+nmap ss :w<CR>
 
 " More tips and tricks available at:
 " http://vi-improved.org/vimrc.php
