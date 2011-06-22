@@ -22,6 +22,10 @@ set numberwidth=4
 " Map jj to <ESC>
 imap jj <Esc>
 
+" Add mapping for swithcing tabs in normal mode
+nmap ö :tabp<CR>
+nmap ä :tabn<CR>
+
 " More tips and tricks available at:
 " http://vi-improved.org/vimrc.php
 " http://weierophinney.net/matthew/archives/249-Vim-Toolbox,-2010-Edition.html
