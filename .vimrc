@@ -28,7 +28,10 @@ imap jj <Esc>
 " Add mapping for saving without exiting 
 imap jfj <Esc>:w<CR>i
 
-"""""""""""""""""""""""
+" Add mapping for saving and exiting directly from insert mode 
+imap fjf <Esc>ZZ
+
+""""""""""""""""""""""" 
 " Normal mode
 """""""""""""""""""""""
 " Add mapping for switching tabs 
@@ -36,7 +39,7 @@ nmap ö :tabp<CR>
 nmap ä :tabn<CR>
 
 " Add mapping for saving without exiting 
-nmap ss :w<CR>
+nmap jfj :w<CR>
 
 " More tips and tricks available at:
 " http://vi-improved.org/vimrc.php
