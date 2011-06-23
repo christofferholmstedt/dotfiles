@@ -26,7 +26,7 @@ set numberwidth=4
 imap jj <Esc>
 
 " Add mapping for saving without exiting 
-nmap jsj <Esc>:w<CR>i
+imap jfj <Esc>:w<CR>i
 
 """""""""""""""""""""""
 " Normal mode
