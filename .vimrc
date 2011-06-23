@@ -22,11 +22,11 @@ set numberwidth=4
 """""""""""""""""""""""
 " Insert mode
 """""""""""""""""""""""
-" Map jj to <ESC> 
+" Map jj to <ESC> in insert mode
 imap jj <Esc>
 
-" Add mapping for saving without exiting 
-imap jfj <Esc>:w<CR>i
+" Add mapping for saving without exiting from insert mode
+imap ffj <Esc>:w<CR>i
 
 " Add mapping for saving and exiting directly from insert mode 
 imap fjf <Esc>ZZ
@@ -34,12 +34,15 @@ imap fjf <Esc>ZZ
 """"""""""""""""""""""" 
 " Normal mode
 """""""""""""""""""""""
-" Add mapping for switching tabs 
+" Add mapping for switching tabs in normal mode
 nmap ö :tabp<CR>
 nmap ä :tabn<CR>
 
-" Add mapping for saving without exiting 
-nmap jfj :w<CR>
+" Add mapping for saving without exiting from normal mode
+nmap ffj :w<CR>
+
+" Add mapping for saving and exiting directly from normal mode
+nmap fjf ZZ
 
 " More tips and tricks available at:
 " http://vi-improved.org/vimrc.php
