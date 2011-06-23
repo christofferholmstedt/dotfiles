@@ -19,14 +19,23 @@ set numberwidth=4
 :nnoremap <Leader>c :set cursorline!<CR>
 " :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
-" Map jj to <ESC>
+"""""""""""""""""""""""
+" Insert mode
+"""""""""""""""""""""""
+" Map jj to <ESC> 
 imap jj <Esc>
 
-" Add mapping for switching tabs in normal mode
+" Add mapping for saving without exiting 
+nmap jsj <Esc>:w<CR>i
+
+"""""""""""""""""""""""
+" Normal mode
+"""""""""""""""""""""""
+" Add mapping for switching tabs 
 nmap ö :tabp<CR>
 nmap ä :tabn<CR>
 
-" Add mapping for saving without exiting
+" Add mapping for saving without exiting 
 nmap ss :w<CR>
 
 " More tips and tricks available at:
