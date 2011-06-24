@@ -19,6 +19,9 @@ set numberwidth=4
 :nnoremap <Leader>c :set cursorline!<CR>
 " :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
+" Autoindent
+set autoindent
+
 """""""""""""""""""""""
 " Insert mode
 """""""""""""""""""""""
