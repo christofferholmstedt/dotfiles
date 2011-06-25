@@ -1,5 +1,7 @@
 " A tab expands to four spaces
 set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Line numbers, 9999 lines should be enough.
 " Line number color is black and the background is default color(not set).
@@ -22,6 +24,14 @@ set numberwidth=4
 " Autoindent
 set autoindent
 
+" Not sure what the effect of these are
+" http://css.dzone.com/articles/vim-php-developers
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
+au FileType php set omnifunc=phpcomplete#CompletePHP " Doesn't seem to work 2011-06-25
 """""""""""""""""""""""
 " Insert mode
 """""""""""""""""""""""
