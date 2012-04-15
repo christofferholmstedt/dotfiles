@@ -13,6 +13,7 @@ set numberwidth=3
 " Start VIM with colored line where the cursor is located.
 :set cursorline
 " :set cursorcolumn
+"
 " :hi CursorLine ctermbg=white ctermfg=black
 " cterm=NONE removes underline from the line that is highlighted.
 :hi CursorLine cterm=NONE ctermbg=DarkBlue
