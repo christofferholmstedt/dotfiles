@@ -8,14 +8,14 @@ set expandtab
 set number
 set numberwidth=3
 " :hi LineNr ctermfg=black ctermbg=white 
-:hi LineNr ctermfg=black
+:hi LineNr ctermfg=white
 
 " Start VIM with colored line where the cursor is located.
 :set cursorline
 " :set cursorcolumn
 " :hi CursorLine ctermbg=white ctermfg=black
 " cterm=NONE removes underline from the line that is highlighted.
-:hi CursorLine cterm=NONE ctermbg=white
+:hi CursorLine cterm=NONE ctermbg=DarkBlue
 " :hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
 " Toggle line highlighting.
 :nnoremap <Leader>c :set cursorline!<CR>
