@@ -3,6 +3,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Basic colors
+set background=dark
+
 " Line numbers, 9999 lines should be enough.
 " Line number color is black and the background is default color(not set).
 set number
