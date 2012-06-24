@@ -12,7 +12,8 @@ Clone or copy this project, in your terminal do the following from your home dir
     # Create symbolic link to load filetype specfic settings
     ln -s /path/to/copied/php.vim ~/.vim/ftplugin/php.vim
 
-Install SuperTab.plugin
+Install SuperTab plugin
+
     Download supertab.vmb
     Open supertab.vmb in vim
     type ":so %"
@@ -46,3 +47,5 @@ Install SuperTab.plugin
     - https://github.com/ervandew/supertab
 1. Change highligh color for the omnicompletion popup
     - http://vim.wikia.com/wiki/VimTip1486
+1. vimdocs
+    - http://vimdoc.sourceforge.net/htmldoc/syntax.html#:highlight

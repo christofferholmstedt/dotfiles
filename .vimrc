@@ -46,8 +46,8 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 :set tags=~/.vim/tags/zendframeworktwo
 
 " Colors for omnicompletion popup/dropdown list
-:highlight Pmenu ctermbg=black ctermfg=white
-:highlight PmenuSel ctermbg=cyan ctermfg=white gui=bold
+:highlight Pmenu ctermbg=lightgray ctermfg=black
+:highlight PmenuSel ctermbg=blue ctermfg=white gui=bold
 
 """""""""""""""""""""""
 " Insert mode
