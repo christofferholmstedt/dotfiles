@@ -27,3 +27,11 @@ Clone or copy this project, in your terminal do the following from your home dir
     - Autocompletion should search for
         * All variables in current file.
         * All function and class names in pre-configured folders.
+
+#### Sources
+
+1. http://css.dzone.com/articles/vim-php-developers
+1. http://mwop.net/blog/134-exuberant-ctags-with-PHP-in-Vim.html
+1. http://css.dzone.com/articles/vim-php-developershttp://www.vim.org/scripts/script.php?script_id=1318
+1. https://github.com/tobyS/vip
+1. http://ctags.sourceforge.net/
