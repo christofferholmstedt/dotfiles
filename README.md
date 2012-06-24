@@ -12,7 +12,11 @@ Clone or copy this project, in your terminal do the following from your home dir
     # Create symbolic link to load filetype specfic settings
     ln -s /path/to/copied/php.vim ~/.vim/ftplugin/php.vim
 
-
+Install SuperTab.plugin
+    Download supertab.vmb
+    Open supertab.vmb in vim
+    type ":so %"
+    
 #### TODO
 
 1. Add autocompletion
@@ -32,8 +36,9 @@ Clone or copy this project, in your terminal do the following from your home dir
 
 1. http://css.dzone.com/articles/vim-php-developers
 1. http://mwop.net/blog/134-exuberant-ctags-with-PHP-in-Vim.html
-1. http://css.dzone.com/articles/vim-php-developershttp://www.vim.org/scripts/script.php?script_id=1318
+1. http://www.vim.org/scripts/script.php?script_id=1318
 1. https://github.com/tobyS/vip
 1. http://ctags.sourceforge.net/
 1. http://phuzz.org/vimrc.html
 1. http://superuser.com/questions/305945/gvim-omni-completion-preview-window-doesnt-go-away
+1. SuperTab plugin: http://www.vim.org/scripts/script.php?script_id=1643
