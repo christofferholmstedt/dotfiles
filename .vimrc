@@ -35,7 +35,12 @@ filetype on
 filetype plugin on
 filetype indent on
 
-au FileType php set omnifunc=phpcomplete#CompletePHP " Doesn't seem to work 2011-06-25
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" Settings for using tab with omnicompletion instead of
+" <ctrl+X><ctrl+O> and closing the scratch buffer when 
+" autocompletion selection is done.
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>" 
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 """""""""""""""""""""""
 " Insert mode
 """""""""""""""""""""""

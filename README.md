@@ -35,3 +35,5 @@ Clone or copy this project, in your terminal do the following from your home dir
 1. http://css.dzone.com/articles/vim-php-developershttp://www.vim.org/scripts/script.php?script_id=1318
 1. https://github.com/tobyS/vip
 1. http://ctags.sourceforge.net/
+1. http://phuzz.org/vimrc.html
+1. http://superuser.com/questions/305945/gvim-omni-completion-preview-window-doesnt-go-away
