@@ -41,4 +41,8 @@ Install SuperTab.plugin
 1. http://ctags.sourceforge.net/
 1. http://phuzz.org/vimrc.html
 1. http://superuser.com/questions/305945/gvim-omni-completion-preview-window-doesnt-go-away
-1. SuperTab plugin: http://www.vim.org/scripts/script.php?script_id=1643
+1. SuperTab plugin
+    - http://www.vim.org/scripts/script.php?script_id=1643
+    - https://github.com/ervandew/supertab
+1. Change highligh color for the omnicompletion popup
+    - http://vim.wikia.com/wiki/VimTip1486

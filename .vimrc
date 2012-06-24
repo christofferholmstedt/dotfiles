@@ -41,6 +41,14 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 " autocompletion selection is done.
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>" 
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Add Zend Framework 2 tags to omnicompletion
+:set tags=~/.vim/tags/zendframeworktwo
+
+" Colors for omnicompletion popup/dropdown list
+:highlight Pmenu ctermbg=black ctermfg=white
+:highlight PmenuSel ctermbg=cyan ctermfg=white gui=bold
+
 """""""""""""""""""""""
 " Insert mode
 """""""""""""""""""""""
