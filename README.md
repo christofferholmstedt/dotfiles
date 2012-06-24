@@ -49,3 +49,4 @@ Install SuperTab plugin
     - http://vim.wikia.com/wiki/VimTip1486
 1. vimdocs
     - http://vimdoc.sourceforge.net/htmldoc/syntax.html#:highlight
+    - http://vimdoc.sourceforge.net/htmldoc/insert.html#ins-completion
