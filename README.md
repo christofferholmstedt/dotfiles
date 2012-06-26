@@ -39,6 +39,11 @@ Install SuperTab plugin
         * http://stackoverflow.com/questions/tagged/autocomplete+vim+php
         * https://github.com/shawncplus/php.vim
         * https://github.com/shawncplus/phpcomplete.vim
+1. Fix this README with installation instructions
+1. Fix better regexp for the generation of tag file.
+    - It should stay small
+    - Add support for "class->" completion.
+
 #### Sources
 
 1. http://css.dzone.com/articles/vim-php-developers
@@ -56,3 +61,5 @@ Install SuperTab plugin
 1. vimdocs
     - http://vimdoc.sourceforge.net/htmldoc/syntax.html#:highlight
     - http://vimdoc.sourceforge.net/htmldoc/insert.html#ins-completion
+1. Easytags
+    - http://peterodding.com/code/vim/easytags
