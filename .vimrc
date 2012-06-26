@@ -28,26 +28,39 @@ set numberwidth=3
 " Autoindent
 set autoindent
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocompletion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Not sure what the effect of these are
 " http://css.dzone.com/articles/vim-php-developers
 syntax on
 filetype on
-filetype plugin on
 filetype indent on
 
+filetype plugin on
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 " Settings for using tab with omnicompletion instead of
 " <ctrl+X><ctrl+O> and closing the scratch buffer when 
 " autocompletion selection is done.
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>" 
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>" 
+" SuperTab option for context aware completion
+"let g:SuperTabDefaultCompletionType = "context"
+
+" InsertLeave below closes the scratch buffer.
+" When leaving insert mode.
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Add Zend Framework 2 tags to omnicompletion
-:set tags=~/.vim/tags/zendframeworktwo
+":set tags=~/.vim/tags/zendframeworktwo
 
 " Colors for omnicompletion popup/dropdown list
 :highlight Pmenu ctermbg=lightgray ctermfg=black
 :highlight PmenuSel ctermbg=blue ctermfg=white gui=bold
+
+" complete options (disable preview scratch window)
+set completeopt=menu,menuone,longest
+" Limit popup menu height
+set pumheight=15
 
 """""""""""""""""""""""
 " Insert mode

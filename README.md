@@ -32,7 +32,13 @@ Install SuperTab plugin
     - Autocompletion should search for
         * All variables in current file.
         * All function and class names in pre-configured folders.
-
+    - Sources for auto/omnicompletion
+        * http://stackoverflow.com/questions/9863706/php-autocomplete-with-vim
+        * http://stackoverflow.com/questions/1224838/vim-php-omni-completion/2316468
+        * http://stackoverflow.com/questions/4568833/vim-good-autocompletion-plugin-for-python-and-php
+        * http://stackoverflow.com/questions/tagged/autocomplete+vim+php
+        * https://github.com/shawncplus/php.vim
+        * https://github.com/shawncplus/phpcomplete.vim
 #### Sources
 
 1. http://css.dzone.com/articles/vim-php-developers
