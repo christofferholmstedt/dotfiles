@@ -1,6 +1,6 @@
 My vim settings
 ===============
-These vim settings are mainly used for php, html and css development.
+These vim settings are mainly used for php, html and css development, the layout of my keyboard is "Swedish" so my mappings might not be good for you.
 Settings are applied on a default vim installation on Ubuntu 12.04 LTS.
 
 #### Installation
