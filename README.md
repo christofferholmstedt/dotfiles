@@ -11,4 +11,4 @@ Clone or copy this project, in your terminal do the following from your home dir
     ln -s /path/to/repository/vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
 
     # Create symbolic links in your .vim/pathogen directory for the plugins you want to use.
-    ln -s ~/Vim-Settings/vim-surround ~/.vim/pathogen/vim-surround
+    ln -s /path/to/repository/vim-surround ~/.vim/pathogen/vim-surround
