@@ -1,6 +1,3 @@
-" Pathogen
-call pathogen#infect('pathogen')
-
 " A tab expands to four spaces
 set tabstop=4
 set shiftwidth=4
