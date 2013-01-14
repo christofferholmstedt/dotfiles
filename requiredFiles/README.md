@@ -25,3 +25,18 @@ or
 
 Add the following to .vimrc if you don't have it already:
 call pathogen#infect()
+
+### Python folding
+    mkdir -p ~/.vim/ftplugin
+    wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
+
+or
+
+    mkdir -p ~/.vim/ftplugin
+    copy the python_editing.vim file to the ftplugin directory
+
+
+### Install these into the ~/.vim/bundle directory.
+git clone https://github.com/klen/python-mode
+git clone https://github.com/kien/ctrlp.vim.git
+git clone git://github.com/Lokaltog/vim-powerline.git
