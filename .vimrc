@@ -2,16 +2,28 @@
 
 " A tab expands to four spaces
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+set shiftround
 set expandtab
+
+" Syntax highlighting
+filetype off
+filetype plugin indent on
+syntax on
 
 " Basic colors
 " set background=dark
 
 " Line numbers, 9999 lines should be enough.
 " Line number color is black and the background is default color(not set).
-set number
-set numberwidth=3
+set number " show line numbers
+set numberwidth=3 
+set tw=79 " width of document (used by gd)
+set nowrap " don't automatically wrap on load
+set fo-=t " don't automatically wrap when typing 
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
 
 " :hi LineNr ctermfg=black ctermbg=white 
 " :hi LineNr ctermfg=white
@@ -57,9 +69,9 @@ autocmd! bufwritepost .vimrc source %
 let mapleader = ","
 
 " Quicksave command
-noremap <C-Z> :update<CR>
-vnoremap <C-Z> <C-C>:update<CR>
-inoremap <C-Z> <C-O>:update<CR>
+noremap <C-s> :update<CR>
+vnoremap <C-s> <C-C>:update<CR>
+inoremap <C-s> <C-O>:update<CR>
 
 " map sort function to a key
 vnoremap <Leader>s :sort<CR>
@@ -68,3 +80,31 @@ vnoremap <Leader>s :sort<CR>
 vnoremap < <gv " better indentation
 vnoremap > >gv " better indentation
 
+" Show whitespace
+" MUST be inserted BEFORE the colorscheme command
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertLeave * match ExtraWhitespace /\s\+$/
+
+" Color scheme
+" mkdir -p ~/.vim/colors && cd ~/.vim/colors
+" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?13400
+set t_Co=256
+color wombat256mod
+
+" useful settings
+set history=700
+set undolevels=700
+
+" easier formatting of paragraphs 
+vmap Q gq
+nmap Q gqap
+
+" Disable stupid backup and swap files - they trigger too many events for file
+" system watchers
+" Run unit test on filesystem save is good
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Setup Pathogen to manage your plugins
+call pathogen#infect()
