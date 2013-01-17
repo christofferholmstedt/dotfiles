@@ -53,10 +53,12 @@ nmap ö :tabp<CR>
 nmap ä :tabn<CR>
 
 """""""""""""""""""""""
-" Insert mode
+" Visual mode
 """""""""""""""""""""""
 " Map jj to <ESC> in visual mode
-vmap jj <Esc>
+" This didn't work out very well when I select entire line with V and 
+" want to select the lines below as fast as possible.
+" vmap jj <Esc>
 
 " ***************************************************************
 " Basic structure from http://www.youtube.com/watch?v=YhqsjUUHj6g
