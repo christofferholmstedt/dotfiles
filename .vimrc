@@ -48,9 +48,15 @@ imap jj <Esc>
 """"""""""""""""""""""" 
 " Normal mode
 """""""""""""""""""""""
+" Map to Swedish keyboard layout
+noremap j h
+noremap k j
+noremap l k
+noremap ö l
+
 " Add mapping for switching tabs in normal mode
-nmap ö :tabp<CR>
-nmap ä :tabn<CR>
+nmap ä :tabp<CR>
+nmap ' :tabn<CR>
 
 """""""""""""""""""""""
 " Visual mode
