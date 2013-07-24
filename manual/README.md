@@ -1,7 +1,9 @@
 Stuff that can't be fixed with scripts
 ======================================
-Define Ubuntu shortcuts.
+### Remove sources from sources.list
+Remove sources (deb-src) from sources.list to save bandwidth and time.
 
+### Define Ubuntu shortcuts.
 ´´´
 Remap "Lock Screen" to ctrl+alt+o
 Remap "Move to workspace left" to ctrl+alt+j
