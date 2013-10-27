@@ -1,5 +1,8 @@
 Basic information about this directory
 ======================================
+INSTRUCTIONS NOT UP TO DATE
+
+
 The directory "requiredFiles" include the necessary files
 to install different stuff for vim. I've included
 them here so all I need to do when configuring vim for a
