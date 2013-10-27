@@ -5,7 +5,7 @@ Settings are applied on a default vim installation on Ubuntu 12.04 LTS.
 
 #### Installation
 
-    ln -s /path/to/repository/.vimrc .vimrc
+    ln -s /path/to/repository/vim/.vimrc .vimrc
 
     mkdir ~/.vim
     cd ~/.vim
