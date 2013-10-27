@@ -11,7 +11,7 @@ Settings are applied on a default vim installation on Ubuntu 12.04 LTS.
     cd ~/.vim
 
     ### Copy required folders and files to correct place
-    cp /path/to/repository/vim/requiredFiles * .
+    cp /path/to/repository/vim/requiredFiles/* .
 
     ### Install these into the ~/.vim/bundle directory.
     git clone https://github.com/klen/python-mode
