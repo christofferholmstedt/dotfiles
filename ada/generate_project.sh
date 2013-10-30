@@ -46,6 +46,8 @@ fi
 mkdir -pv "$NAME_PROJECT/src"
 mkdir -pv "$NAME_PROJECT/obj"
 
+
+### Source file main .adb file.
 NAME_MAIN_LOWERCASE=$(echo "$NAME_MAIN" | tr '[:upper:]' '[:lower:]')
 
 cat > ./$NAME_PROJECT/src/$NAME_MAIN_LOWERCASE.adb <<EOF
@@ -59,7 +61,8 @@ EOF
 
 echo "Created source file at $NAME_PROJECT/src/$NAME_MAIN_LOWERCASE.adb"
 
-NAME_PROJECT_LOWERCASE=$(echo "$NAME_PROJECT_LOWERCASE" | tr '[:upper:]' '[:lower:]')
+### Project file.
+NAME_PROJECT_LOWERCASE=$(echo "$NAME_PROJECT" | tr '[:upper:]' '[:lower:]')
 
 cat > ./$NAME_PROJECT_LOWERCASE/$NAME_PROJECT_LOWERCASE.gpr <<EOF
 project $NAME_PROJECT is
