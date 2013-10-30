@@ -43,14 +43,16 @@ then
      exit 1
 fi
 
-mkdir -pv "$NAME_PROJECT/src"
-mkdir -pv "$NAME_PROJECT/obj"
+NAME_PROJECT_LOWERCASE=$(echo "$NAME_PROJECT" | tr '[:upper:]' '[:lower:]')
+
+mkdir -pv "$NAME_PROJECT_LOWERCASE/src"
+mkdir -pv "$NAME_PROJECT_LOWERCASE/obj"
 
 
 ### Source file main .adb file.
 NAME_MAIN_LOWERCASE=$(echo "$NAME_MAIN" | tr '[:upper:]' '[:lower:]')
 
-cat > ./$NAME_PROJECT/src/$NAME_MAIN_LOWERCASE.adb <<EOF
+cat > ./$NAME_PROJECT_LOWERCASE/src/$NAME_MAIN_LOWERCASE.adb <<EOF
 procedure $NAME_MAIN is
 
 begin
@@ -59,10 +61,9 @@ begin
 end $NAME_MAIN;
 EOF
 
-echo "Created source file at $NAME_PROJECT/src/$NAME_MAIN_LOWERCASE.adb"
+echo "Created source file at $NAME_PROJECT_LOWERCASE/src/$NAME_MAIN_LOWERCASE.adb"
 
 ### Project file.
-NAME_PROJECT_LOWERCASE=$(echo "$NAME_PROJECT" | tr '[:upper:]' '[:lower:]')
 
 cat > ./$NAME_PROJECT_LOWERCASE/$NAME_PROJECT_LOWERCASE.gpr <<EOF
 project $NAME_PROJECT is
@@ -73,3 +74,14 @@ end $NAME_PROJECT;
 EOF
 
 echo "Created source file at $NAME_PROJECT_LOWERCASE/$NAME_PROJECT_LOWERCASE.gpr"
+
+### Makefile.
+# TAB=`echo -e "\t"`
+
+printf "all:\n\tgnatmake -d -p -P $NAME_PROJECT_LOWERCASE.gpr" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\nclean:" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\trm -rf obj/*.o" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\trm -rf obj/*.ali" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\trm -rf obj/$NAME_MAIN_LOWERCASE" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+
+echo "Created Makefile at $NAME_PROJECT_LOWERCASE/Makefile"
