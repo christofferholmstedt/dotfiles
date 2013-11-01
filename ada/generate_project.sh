@@ -70,6 +70,11 @@ project $NAME_PROJECT is
     for Source_Dirs use ("src");
     for Object_Dir use "obj";
     for Main use ("$NAME_MAIN_LOWERCASE.adb");
+
+    package Compiler is
+       for Local_Configuration_Pragmas use "project_pragmas";
+    end Compiler;
+
 end $NAME_PROJECT;
 EOF
 
@@ -78,7 +83,19 @@ echo "Created source file at $NAME_PROJECT_LOWERCASE/$NAME_PROJECT_LOWERCASE.gpr
 ### Makefile.
 # TAB=`echo -e "\t"`
 
-printf "all:\n\tgnatmake -d -p -P $NAME_PROJECT_LOWERCASE.gpr" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf ".PHONY: clean" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+
+printf "\n\nravenscar: clean" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\techo \"pragma Profile(Ravenscar);\" > project_pragmas" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\tgnatmake -d -p -P $NAME_PROJECT_LOWERCASE.gpr" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+
+printf "\n\nrestricted: clean" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\techo \"pragma Profile(Restricted);\" > project_pragmas" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\tgnatmake -d -p -P $NAME_PROJECT_LOWERCASE.gpr" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+
+printf "\n\nall: clean" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\techo \"\" > project_pragmas" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n\tgnatmake -d -p -P $NAME_PROJECT_LOWERCASE.gpr" >> ./$NAME_PROJECT_LOWERCASE/Makefile
 printf "\n\nclean:" >> ./$NAME_PROJECT_LOWERCASE/Makefile
 printf "\n\trm -rf obj/*.o" >> ./$NAME_PROJECT_LOWERCASE/Makefile
 printf "\n\trm -rf obj/*.ali" >> ./$NAME_PROJECT_LOWERCASE/Makefile
