@@ -84,6 +84,9 @@ echo "Created source file at $NAME_PROJECT_LOWERCASE/$NAME_PROJECT_LOWERCASE.gpr
 # TAB=`echo -e "\t"`
 
 printf ".PHONY: clean" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+printf "\n.PHONY: all" >> ./$NAME_PROJECT_LOWERCASE/Makefile
+
+printf "\n\nubuntu: all" >> ./$NAME_PROJECT_LOWERCASE/Makefile
 
 printf "\n\nravenscar: clean" >> ./$NAME_PROJECT_LOWERCASE/Makefile
 printf "\n\techo \"pragma Profile(Ravenscar);\" > project_pragmas" >> ./$NAME_PROJECT_LOWERCASE/Makefile
