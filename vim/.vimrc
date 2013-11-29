@@ -21,7 +21,7 @@ set number " show line numbers
 set numberwidth=3 
 set tw=79 " width of document (used by gd)
 set nowrap " don't automatically wrap on load
-set fo-=t " don't automatically wrap when typing 
+" set fo-=t " don't automatically wrap when typing 
 set colorcolumn=80
 highlight ColorColumn ctermbg=233
 
