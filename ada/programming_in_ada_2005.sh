@@ -3,14 +3,14 @@
 usage()
 {
 cat << EOF
-    usage: $0 -m NAME_MAIN -e PACKGE -d DIRECTORY -p NAME_PROJECT
+    usage: $0 -m NAME_MAIN -s PACKAGE -d DIRECTORY -p NAME_PROJECT
 
-    -m Main -e Simple_Package -d exercise -p Exercise
+    -m Main -s Simple_Package -d exercise -p Exercise
 
     OPTIONS:
     -h Shows this message
     -d Directory name
-    -e Package name
+    -s Package name
     -m Main file name (and main procedure name)
     -p Project Name
 EOF
@@ -24,7 +24,7 @@ NAME_PACKAGE=
 
 # Some basics at the follwing page
 # http://rsalveti.wordpress.com/2007/04/03/bash-parsing-arguments-with-getopts/
-while getopts “he:d:m:p:” OPTION
+while getopts “hs:d:m:p:” OPTION
 do
 case $OPTION in
          h)
@@ -34,7 +34,7 @@ case $OPTION in
          m)
              NAME_MAIN=$OPTARG
              ;;
-         e)
+         s)
              NAME_PACKAGE=$OPTARG
              ;;
          d)
@@ -50,13 +50,16 @@ case $OPTION in
      esac
 done
 
-if [[ -z $NAME_MAIN ]] || [[ -z $NAME_PROJECT ]] || [[ -z $NAME_DIRECTORY ]]
+if [[ -z $NAME_MAIN ]] || [[ -z $NAME_PROJECT ]] || [[ -z $NAME_DIRECTORY ]] ||
+    [[ -z $NAME_PACKAGE ]]
 then
     usage
      exit 1
 fi
 
+NAME_PROJECT_LOWERCASE=$(echo "$NAME_PROJECT" | tr '[:upper:]' '[:lower:]')
 NAME_DIRECTORY_LOWERCASE=$(echo "$NAME_DIRECTORY" | tr '[:upper:]' '[:lower:]')
+NAME_PACKAGE_LOWERCASE=$(echo "$NAME_PACKAGE" | tr '[:upper:]' '[:lower:]')
 
 mkdir -pv "$NAME_DIRECTORY_LOWERCASE/src"
 mkdir -pv "$NAME_DIRECTORY_LOWERCASE/obj"
@@ -67,12 +70,21 @@ NAME_MAIN_LOWERCASE=$(echo "$NAME_MAIN" | tr '[:upper:]' '[:lower:]')
 ### Source file main .adb file.
 cat > ./$NAME_DIRECTORY_LOWERCASE/src/$NAME_MAIN_LOWERCASE.adb <<EOF
 with $NAME_PACKAGE;
+with Ada.Text_IO;
 
 procedure $NAME_MAIN is
+    package Int_IO is new Ada.Text_IO.Integer_IO(Integer);
+
+    X: Integer := 4;
 
 begin
-    -- Insert code here.
-    null;
+    Ada.Text_IO.Put("First Integer print out: ");
+    Int_IO.Put(X);
+    Ada.Text_IO.New_Line;
+    Ada.Text_IO.Put("Second Integer print out: ");
+    Int_IO.Put(Simple_IO.Square(X));
+    Ada.Text_IO.New_Line;
+    Ada.Text_IO.Put_Line("End of program.");
 end $NAME_MAIN;
 EOF
 
@@ -80,30 +92,29 @@ echo "Created source file at $NAME_DIRECTORY_LOWERCASE/src/$NAME_MAIN_LOWERCASE.
 
 ### Source file package .adb/.ads files.
 
-cat > ./$NAME_DIRECTORY_LOWERCASE/src/$NAME_PACKAGE.adb <<EOF
+cat > ./$NAME_DIRECTORY_LOWERCASE/src/$NAME_PACKAGE_LOWERCASE.adb <<EOF
 package body $NAME_PACKAGE is
 
-    procedure $NAME_MAIN(F: out Float) is
+    function Square(F: in Integer) return Integer is
 
     begin
-        -- Insert code here.
-        null;
-    end $NAME_MAIN;
+        return F * F;
+    end Square;
 
 end $NAME_PACKAGE;
 EOF
 
-echo "Created source file at $NAME_DIRECTORY_LOWERCASE/src/$NAME_PACKAGE.adb"
+echo "Created source file at $NAME_DIRECTORY_LOWERCASE/src/$NAME_PACKAGE_LOWERCASE.adb"
 
-cat > ./$NAME_DIRECTORY_LOWERCASE/src/$NAME_PACKAGE.ads <<EOF
+cat > ./$NAME_DIRECTORY_LOWERCASE/src/$NAME_PACKAGE_LOWERCASE.ads <<EOF
 package $NAME_PACKAGE is
 
-    procedure $NAME_MAIN(F: out Float);
+    function Square(F: in Integer) return Integer;
 
 end $NAME_PACKAGE;
 EOF
 
-echo "Created source file at $NAME_DIRECTORY_LOWERCASE/src/$NAME_PACKAGE.ads"
+echo "Created source file at $NAME_DIRECTORY_LOWERCASE/src/$NAME_PACKAGE_LOWERCASE.ads"
 
 ### Project file.
 
@@ -140,7 +151,7 @@ printf "\n\tgnatmake -d -p -P $NAME_PROJECT_LOWERCASE.gpr" >> ./$NAME_DIRECTORY_
 
 printf "\n\nall: clean" >> ./$NAME_DIRECTORY_LOWERCASE/Makefile
 printf "\n\techo \"\" > project_pragmas" >> ./$NAME_DIRECTORY_LOWERCASE/Makefile
-printf "\n\tgnatmake -d -p -P $NAME_DIRECTORY_LOWERCASE.gpr" >> ./$NAME_DIRECTORY_LOWERCASE/Makefile
+printf "\n\tgnatmake -d -p -P $NAME_PROJECT_LOWERCASE.gpr" >> ./$NAME_DIRECTORY_LOWERCASE/Makefile
 printf "\n\nclean:" >> ./$NAME_DIRECTORY_LOWERCASE/Makefile
 printf "\n\trm -rf obj/*.o" >> ./$NAME_DIRECTORY_LOWERCASE/Makefile
 printf "\n\trm -rf obj/*.ali" >> ./$NAME_DIRECTORY_LOWERCASE/Makefile
