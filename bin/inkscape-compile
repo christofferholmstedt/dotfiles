@@ -1,0 +1,52 @@
+#!/bin/bash
+# Created by Christoffer Holmstedt ~ 2013-06-19
+# This will configure, make and make install Inkscape from developer repository 
+# and install it to current user's home directory
+# "/home/<username>/opt/local/<current_directory_name>".
+#
+# When developing for Inkscape I store all my branches in a common Inkscape
+# directory. Each branch get a corresponding name that maps to either a
+# launchpad bug number or a feature name. When I compile from within a branch I
+# want that branch name to also be the name of the installation folder. As an
+# example I can be developing in
+# "/home/christoffer/application/Inkscape/lp123456-new-feature" then I want the
+# installation folder to be "/home/christoffer/opt/local/lp123456-new-feature".
+
+# Improvements
+# TODO: Check for directory names with spaces (I never use spaces in names).
+
+# Step 1: Aquire necessary information
+echo "========== STEP 1 ========="
+echo "= Aquire variables"
+echo "==========================="
+CURRENT_PROJ=${PWD}      # Folder name
+CURRENT_PROJ="$(dirname "$CURRENT_PROJ")"
+CURRENT_PROJ="$(basename "$CURRENT_PROJ")"
+
+# Step 2: Configuration step 1.
+echo "========== STEP 2 ========="
+echo "= autogen script"
+echo "==========================="
+NOCONFIGURE=1 && ../autogen.sh
+
+# Step 3: Configuration step 2.
+echo "========== STEP 3 ========="
+echo "= configure installation path"
+echo "==========================="
+CONFIGURE_CMD="../configure --prefix=/home/christoffer/opt/inkscape-dev/$CURRENT_PROJ"
+eval $CONFIGURE_CMD
+
+# Step 4: Make
+echo "========== STEP 4 ========="
+echo "= make "
+echo "==========================="
+make -j5
+
+# Step 5: Install (no sudo required as I install in home folder).
+echo "========== STEP 5 ========="
+echo "= make install"
+echo "==========================="
+make install
+echo "========== DONE ========="
+echo "= Installation complete"
+echo "========================="
