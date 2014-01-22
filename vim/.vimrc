@@ -6,6 +6,7 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
+set pastetoggle=<F2>
 
 " Syntax highlighting
 filetype off
