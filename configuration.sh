@@ -14,8 +14,8 @@ mkdir -v ../.vim
 cp -rv ./vim/requiredFiles/* ../.vim/
 cd ../.vim/bundle/
 
-git clone https://github.com/klen/python-mode
-git clone https://github.com/kien/ctrlp.vim.git
+# git clone https://github.com/klen/python-mode
+# git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/Lokaltog/vim-powerline.git
 
 # Configure git
