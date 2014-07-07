@@ -17,14 +17,25 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 git config --global core.editor "vim"
 
-### Keyboard mappings
-OUTPUT_FILE=".config/autostart/keybindings.desktop"
+### Keyboard mappings (Assumes XFCE)
+OUTPUT_FILE="$HOME/.config/autostart/keybindings.desktop"
 
-echo "" >> $HOME/$OUTPUT_FILE
-echo "# Keyboard mappings, see my dotfiles git repository for more information." >> $HOME/$OUTPUT_FILE
-echo "if [ -f $dotfiles_dir/keyboard_bindings/keyboard_bindings.sh ]; then" >> $HOME/$OUTPUT_FILE
-echo ". $dotfiles_dir/keyboard_bindings/keyboard_bindings.sh" >> $HOME/$OUTPUT_FILE
-echo "fi" >> $HOME/$OUTPUT_FILE
+if [ ! -f $OUTPUT_FILE ]; then
+
+cat > $OUTPUT_FILE << EOL
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Set keybindings
+Comment=Custom keybindings for AltGr and Caps Lock
+Exec=$dotfiles_dir/keyboard_bindings/keyboard_bindings.sh
+StartupNotify=false
+Terminal=false
+Hidden=false
+EOL
+
+fi
 
 ### Vim
 if [ ! -f ../.vimrc ]; then
