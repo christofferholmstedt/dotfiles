@@ -17,6 +17,9 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 git config --global core.editor "vim"
 
+git config --global alias.graph 'log --graph --decorate --pretty=oneline'
+git config --global alias.network '!git graph'
+
 ### Keyboard mappings (Assumes XFCE)
 OUTPUT_FILE="$HOME/.config/autostart/keybindings.desktop"
 
