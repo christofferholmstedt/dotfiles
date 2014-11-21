@@ -19,7 +19,7 @@ git config --global core.editor "vim"
 
 git config --global alias.graph 'log --graph --decorate --oneline'
 git config --global alias.network '!git graph'
-git config --global alias.branch-history '!git graph --simplify-by-decoration'
+git config --global alias.branch-relations '!git graph --simplify-by-decoration'
 
 ### Keyboard mappings (Assumes XFCE)
 OUTPUT_FILE="$HOME/.config/autostart/keybindings.desktop"
