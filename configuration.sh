@@ -26,6 +26,8 @@ OUTPUT_FILE="$HOME/.config/autostart/keybindings.desktop"
 
 if [ ! -f $OUTPUT_FILE ]; then
 
+    mkdir -pv $HOME/.config/autostart
+
 cat > $OUTPUT_FILE << EOL
 [Desktop Entry]
 Encoding=UTF-8
