@@ -1,17 +1,18 @@
 " Default settings in the top from me, Christoffer Holmstedt
 
 " A tab expands to four spaces
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
 set shiftround
-set expandtab
+set noexpandtab
 set pastetoggle=<F2>
 
 " Syntax highlighting
 filetype off
 filetype plugin indent on
 syntax on
+syn on se title
 
 " Basic colors
 " set background=dark
