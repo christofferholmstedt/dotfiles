@@ -16,6 +16,8 @@ git config --global user.email "christoffer.holmstedt@gmail.com"
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 git config --global core.editor "vim"
+git config --global core.abbrev 12
+git config --replace-all --global pretty.fixes 'Fixes: %h ("%s")'
 
 git config --global alias.graph 'log --graph --decorate --oneline'
 git config --global alias.network '!git graph'
