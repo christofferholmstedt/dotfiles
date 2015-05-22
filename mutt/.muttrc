@@ -1,0 +1,18 @@
+set smtp_url="smtp://christoffer@christofferholmstedt.se@box.christofferholmstedt.se:587"
+
+set imap_keepalive=300
+set imap_user="christoffer@christofferholmstedt.se"
+set from="Christoffer Holmstedt <christoffer@christofferholmstedt.se>"
+
+set folder="imaps://box.christofferholmstedt.se/"
+set spoolfile="=INBOX"
+set record="=Sent"
+set postponed="=Drafts"
+
+set header_cache="~/.mutt/headercache"
+set message_cachedir="~/.mutt/messagecache"
+
+set mail_check=60
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set imap_check_subscribed
