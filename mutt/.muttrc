@@ -16,3 +16,5 @@ set mail_check=60
 set ssl_starttls=yes
 set ssl_force_tls=yes
 set imap_check_subscribed
+
+set editor='vim'
