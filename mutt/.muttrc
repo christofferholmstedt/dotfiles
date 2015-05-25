@@ -9,8 +9,8 @@ set spoolfile="=INBOX"
 set record="=Sent"
 set postponed="=Drafts"
 
-set header_cache="~/.mutt/headercache"
-set message_cachedir="~/.mutt/messagecache"
+set header_cache="~/mail/cache/headercache"
+set message_cachedir="~/mail/cache/messagecache"
 
 set mail_check=60
 set ssl_starttls=yes
@@ -18,3 +18,19 @@ set ssl_force_tls=yes
 set imap_check_subscribed
 
 set editor='vim'
+set signature='~/.signature'
+
+# Sorting
+set sort="threads"
+set sort_aux="reverse-last-date-received"
+
+# Keybindings for Swedish keyboard layout shifting the "home row" keys a step.
+bind browser,index,pager j noop
+bind index,pager K next-undeleted
+bind browser,generic,index,pager k next-entry
+bind index,pager L previous-undeleted
+bind browser,generic,index,pager l previous-entry
+bind index h limit
+
+# Don't move to next email when reaching the end of an email
+set pager_stop=yes
