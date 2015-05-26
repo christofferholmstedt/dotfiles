@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Install some required packages
-sudo apt-get update
-sudo apt-get install vim mutt procmail
+# sudo apt-get update
+# sudo apt-get install vim mutt procmail
 
 # Configure vim
 # Assumption is made that this script is run from the dotfiles folder
