@@ -27,10 +27,22 @@ set sort_aux="reverse-last-date-received"
 # Keybindings for Swedish keyboard layout shifting the "home row" keys a step.
 bind browser,index,pager j noop
 bind index,pager K next-undeleted
-bind browser,generic,index,pager k next-entry
 bind index,pager L previous-undeleted
-bind browser,generic,index,pager l previous-entry
+bind browser,generic,index k next-entry
+bind browser,generic,index l previous-entry
+bind pager j next-entry
+bind pager ö previous-entry
+
+# As l (ell) is bound to previous-entry, j is used instead for limiting.
 bind index j limit
+
+# While reading email it is handy to go up and down line by line.
+bind pager k next-line
+bind pager l previous-line
+
+# Go to bottom and top of email straight away
+bind pager b bottom
+bind pager B top
 
 # Don't move to next email when reaching the end of an email
 set pager_stop=yes
