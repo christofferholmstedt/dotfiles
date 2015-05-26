@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Install vim
-# Already done...sudo apt-get install git vim
-# is the default installation command I use when I have a new machine
+# Install some required packages
+sudo apt-get update
+sudo apt-get install vim mutt procmail
 
 # Configure vim
 # Assumption is made that this script is run from the dotfiles folder
@@ -59,5 +59,11 @@ fi
 
 ### Mutt
 if [ ! -f ../.muttrc ]; then
+	mkdir -pv ../applications/mailtogit
+	mkdir -pv ../applications/patches
 	ln -sv ./dotfiles/mutt/.muttrc ../.muttrc
+
+	ln -sv ./dotfiles/mutt/mailtogit/mail-to-mbox ../applications/mailtogit/mail-to-mbox
+	ln -sv ./dotfiles/mutt/mailtogit/procmail ../applications/mailtogit/procmail
+	ln -sv ./dotfiles/mutt/mailtogit/procmailrc ../applications/mailtogit/procmailrc
 fi

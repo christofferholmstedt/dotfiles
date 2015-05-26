@@ -1,0 +1,2 @@
+formail -cds ~/applications/mailtogit/procmail -
+ls -l ~/applications/patches/

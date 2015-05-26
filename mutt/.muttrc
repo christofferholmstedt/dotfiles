@@ -30,7 +30,10 @@ bind index,pager K next-undeleted
 bind browser,generic,index,pager k next-entry
 bind index,pager L previous-undeleted
 bind browser,generic,index,pager l previous-entry
-bind index h limit
+bind index j limit
 
 # Don't move to next email when reaching the end of an email
 set pager_stop=yes
+
+# Macro to save multiple emails to specificed folder
+macro index h '<pipe-entry>~/applications/mailtogit/mail-to-mbox^M' "output git patches"
