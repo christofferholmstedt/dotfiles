@@ -1,17 +1,18 @@
 " Default settings in the top from me, Christoffer Holmstedt
 
 " A tab expands to four spaces
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
 set shiftround
-set expandtab
+set noexpandtab
 set pastetoggle=<F2>
 
 " Syntax highlighting
 filetype off
 filetype plugin indent on
 syntax on
+syn on se title
 
 " Basic colors
 " set background=dark
@@ -22,7 +23,7 @@ set number " show line numbers
 set numberwidth=3 
 set tw=79 " width of document (used by gd)
 set nowrap " don't automatically wrap on load
-" set fo-=t " don't automatically wrap when typing 
+set fo-=t " don't automatically wrap when typing 
 set colorcolumn=80
 highlight ColorColumn ctermbg=233
 
