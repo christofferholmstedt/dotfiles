@@ -64,6 +64,7 @@ if [ ! -f ../.muttrc ]; then
 	mkdir -pv ../applications/mailtogit
 	mkdir -pv ../applications/patches
 	ln -sv ./dotfiles/mutt/.muttrc ../.muttrc
+	ln -sv ./dotfiles/mutt/.signature ../.signature
 
 	ln -sv ../../dotfiles/mutt/mailtogit/mail-to-mbox ../applications/mailtogit/mail-to-mbox
 	ln -sv ../../dotfiles/mutt/mailtogit/procmail ../applications/mailtogit/procmail
