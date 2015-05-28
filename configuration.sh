@@ -12,7 +12,7 @@ echo $dotfiles_dir
 
 ### Git
 git config --global user.name "Christoffer Holmstedt"
-git config --global user.email "christoffer.holmstedt@gmail.com"
+git config --global user.email "christoffer@christofferholmstedt.se"
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 git config --global core.editor "vim"
