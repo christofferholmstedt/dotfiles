@@ -27,11 +27,12 @@ git config --global sendemail.smtpserver box.christofferholmstedt.se
 git config --global sendemail.smtpuser christoffer@christofferholmstedt.se
 git config --global sendemail.smtpserverport 587
 git config --global sendemail.smtpencryption tls
-git config --global sendemail.chainreplyto false
+git config --global sendemail.from "Christoffer Holmstedt <christoffer@christofferholmstedt.se>"
 git config --global sendemail.suppresscc self
+git config --global sendemail.suppressfrom true
+git config --global sendemail.chainreplyto false
 
 git config --global sendemail.wpan.to "linux-wpan@vger.kernel.org"
-git config --global sendemail.wpan.from "Christoffer Holmstedt <christoffer@christofferholmstedt.se>"
 
 ### Keyboard mappings (Assumes XFCE)
 OUTPUT_FILE="$HOME/.config/autostart/keybindings.desktop"
