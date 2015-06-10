@@ -12,7 +12,7 @@ set postponed="=Drafts"
 set header_cache="~/mail/cache/headercache"
 set message_cachedir="~/mail/cache/messagecache"
 
-set mail_check=60
+set mail_check=10
 set ssl_starttls=yes
 set ssl_force_tls=yes
 set imap_check_subscribed
