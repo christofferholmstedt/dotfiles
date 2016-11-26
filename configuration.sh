@@ -47,7 +47,7 @@ EOL
 fi
 
 ### tmux
-if [ ! -f ../.tmux.conf]; then
+if [ ! -f ../.tmux.conf ]; then
     ln -sv ./dotfiles/tmux/.tmux.conf ../.tmux.conf
 fi
 
