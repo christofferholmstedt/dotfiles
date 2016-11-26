@@ -23,7 +23,7 @@ git config --global alias.graph 'log --graph --decorate --oneline'
 git config --global alias.network '!git graph'
 git config --global alias.branch-relations '!git graph --simplify-by-decoration'
 
-### Keyboard mappings (Assumes XFCE)
+### Keyboard mappings (Assumes *buntu)
 OUTPUT_FILE="$HOME/.config/autostart/keybindings.desktop"
 
 if [ ! -f $OUTPUT_FILE ]; then
@@ -37,10 +37,11 @@ Version=0.9.4
 Type=Application
 Name=Set keybindings
 Comment=Custom keybindings for AltGr and Caps Lock
-Exec=$dotfiles_dir/keyboard_bindings/keyboard_bindings.sh
+Exec=/bin/bash -c "sleep 15 && $dotfiles_dir/keyboard_bindings/keyboard_bindings.sh"
 StartupNotify=false
 Terminal=false
 Hidden=false
+X-GNOME-Autostart-enabled=true
 EOL
 
 fi
