@@ -46,11 +46,6 @@ EOL
 
 fi
 
-### tmux
-if [ ! -f ../.tmux.conf ]; then
-    ln -sv ./dotfiles/tmux/.tmux.conf ../.tmux.conf
-fi
-
 ### Vim
 if [ ! -f ../.vimrc ]; then
     ln -sv ./dotfiles/vim/.vimrc ../.vimrc
